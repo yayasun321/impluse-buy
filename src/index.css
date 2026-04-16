@@ -37,7 +37,7 @@ body { background: var(--bg); color: #FFFCA8; min-height: 100vh; }
   padding-top: 40px;
 }
 
-/* ── Logo + title ── */
+/* ── Logo and title ── */
 .home-head { text-align: center; }
 
 .logo-mark {
@@ -249,7 +249,7 @@ body { background: var(--bg); color: #FFFCA8; min-height: 100vh; }
 .pill-mixed { background: #fef3c7; color: var(--amber); }
 .pill-poor  { background: #fee2e2; color: var(--red);   }
 
-/* ── Eva card (steps 2 & 3) ── */
+/* ── Eva card ── */
 .eva-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -262,7 +262,7 @@ body { background: var(--bg); color: #FFFCA8; min-height: 100vh; }
 .eva-step { font-size: 11px; color: var(--ink3); }
 .eva-question { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.4; }
 
-/* ── Budget range (step 2) ── */
+/* ── Budget range  ── */
 .range-row { display: flex; align-items: center; gap: 10px; margin: 14px 0 10px; }
 .range-input {
   flex: 1; min-width: 0; border: 1.5px solid var(--border);
@@ -278,7 +278,7 @@ body { background: var(--bg); color: #FFFCA8; min-height: 100vh; }
 .range-under { color: var(--green); }
 .range-ok    { color: var(--green); }
 
-/* ── Alternatives grid (step 3) ── */
+/* ── Alternatives grid  ── */
 .alts-step-grid { display: flex; flex-direction: column; gap: 10px; }
 .alt-step-card {
   display: flex; align-items: flex-start; gap: 12px;

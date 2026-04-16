@@ -1,13 +1,8 @@
-// ============================================================
 // SERPER.DEV GOOGLE SHOPPING API
 //
 // One search call returns the top product match plus
 // alternative listings from other stores — used for both
-// the product preview on the home screen and Step 3 alternatives.
-//
-// Credentials are read from .env:
-//   VITE_SERPER_API_KEY → your Serper API key from serper.dev
-// ============================================================
+// the product preview on the home screen and alternatives.
 
 // Extract a readable search query from an e-commerce or Google Shopping URL.
 export function urlToSearchQuery(url) {

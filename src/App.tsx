@@ -13,8 +13,8 @@ import Box from "./Box";
 import Button from "./Button";
 import Carousel from "./Components/MyCarousel";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./Button.css";
 
-// This defines what a Purchase looks like so TypeScript stays happy
 interface Purchase {
   id: string;
   item: string;
@@ -25,20 +25,17 @@ function App() {
   const [user, setUser] = useState<any>(null);
   const [purchases, setPurchases] = useState<Purchase[]>([]);
 
-  // 1. AUTH LISTENER: Manages login state and clears data on logout
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (!currentUser) {
-        setPurchases([]); // Safety: Clear the list when the user logs out
+        setPurchases([]);
       }
     });
     return () => unsubscribeAuth();
   }, []);
 
-  // 2. DATABASE LISTENER: Only fetches items belonging to the logged-in user
   useEffect(() => {
-    // Stop here if no user is logged in to avoid "undefined" errors
     if (!user) return;
 
     const q = query(
@@ -64,16 +61,14 @@ function App() {
     return () => unsubscribeData();
   }, [user]);
 
-  // 3. THE SWITCHER: Early return shows the landing page if not logged in
   if (!user) {
     return <Carousel />;
   }
 
-  // 4. THE DASHBOARD: Shows your app logic once logged in
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="Main-Title">Have an impulse?</h1>
+        <h1 className="Main-Title">Want to buy an item?</h1>
         <button
           className="btn btn-outline-danger btn-sm"
           onClick={() => signOut(auth)}
@@ -82,7 +77,6 @@ function App() {
         </button>
       </div>
 
-      {/* Your Evaluation components */}
       <Button onClick={() => console.log("Evaluate clicked")}>Evaluate</Button>
       <Box />
 

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { db } from "./firebase";
+import { useState } from "react";
+import { db, auth } from "./firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import "./Box.css";
+import "./Button.css";
+import Button from "./Button";
 
 const Box = () => {
   const [inputValue, setInputValue] = useState("");
@@ -11,6 +13,7 @@ const Box = () => {
       await addDoc(collection(db, "purchases"), {
         item: inputValue,
         createdAt: serverTimestamp(),
+        userId: auth.currentUser?.uid,
       });
 
       console.log("Document written to Firebase");
@@ -24,14 +27,12 @@ const Box = () => {
     <div className="login-box">
       <input
         type="text"
-        placeholder="Link or type in the name of the item"
+        placeholder="Type in the name of the item"
         className="purchase-input"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button onClick={handleLog} className="btn btn-success">
-        Log
-      </button>
+      <Button onClick={handleLog}>Log</Button>
     </div>
   );
 };

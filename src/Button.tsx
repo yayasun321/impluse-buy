@@ -1,5 +1,3 @@
-import "./Button.css";
-
 interface Props {
   children: string;
   color?: string;

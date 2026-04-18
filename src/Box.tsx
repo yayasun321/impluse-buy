@@ -2,8 +2,7 @@ import { useState } from "react";
 import { db, auth } from "./firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import "./Box.css";
-import "./Button.css";
-import LogButton from "./LogButton";
+import Button from "./Button";
 
 const Box = () => {
   const [inputValue, setInputValue] = useState("");
@@ -24,15 +23,20 @@ const Box = () => {
   };
 
   return (
-    <div className="login-box">
-      <input
-        type="text"
-        placeholder="Type in the name of the item"
-        className="purchase-input"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
-      <LogButton onClick={handleLog}>Log</LogButton>
+    <div className="container bg-white p-5 rounded shadow-sm text-center">
+      <h1 className="mb-4">Add your purchase to the list below</h1>
+      <div className="d-flex flex-column align-items-center">
+        <input
+          type="text"
+          className="form-control w-50 mb-3"
+          placeholder="Type in the name of the item"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button className="btn btn-success px-4" onClick={handleLog}>
+          Enter
+        </button>
+      </div>
     </div>
   );
 };

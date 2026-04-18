@@ -13,7 +13,6 @@ import Box from "./Box";
 import Button from "./Button";
 import Carousel from "./Components/MyCarousel";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./Button.css";
 import AppAntara from "./AppAntara";
 
 interface Purchase {
@@ -83,10 +82,14 @@ function App() {
         </button>
       </div>
 
-      <Button onClick={() => setShowEvaluation(true)}>Evaluate</Button>
-      <Box />
+      <div className="text-center">
+        <Button onClick={() => setShowEvaluation(true)}>Evaluate</Button>
+        <div className="mt-3">
+          <Box />
+        </div>
+      </div>
 
-      <h1 className="Purchased-Title mt-5">Purchased:</h1>
+      <h1 className="Purchased-Title mt-5">Previous Purchases:</h1>
       <ul className="list-group mb-5">
         {purchases.map((p) => (
           <li

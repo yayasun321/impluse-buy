@@ -1,12 +1,8 @@
-.btn-success {
+.btn btn-success {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100px;
     height: 100px;
-    color:blue;
-}
-
-.log-button {
-    background-color: green;
+    background-color:blue;
 }

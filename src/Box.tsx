@@ -3,7 +3,7 @@ import { db, auth } from "./firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import "./Box.css";
 import "./Button.css";
-import Button from "./Button.tsx";
+import LogButton from "./LogButton";
 
 const Box = () => {
   const [inputValue, setInputValue] = useState("");
@@ -32,7 +32,7 @@ const Box = () => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <Button onClick={handleLog}>Log</Button>
+      <LogButton onClick={handleLog}>Log</LogButton>
     </div>
   );
 };

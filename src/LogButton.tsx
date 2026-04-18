@@ -1,5 +1,3 @@
-import "./Button.css";
-
 interface Props {
   children: string;
   color?: string;
@@ -7,7 +5,7 @@ interface Props {
   onClick: () => void;
 }
 
-const Button = ({ children, onClick, color = "success" }: Props) => {
+const LogButton = ({ children, onClick, color = "success" }: Props) => {
   return (
     <button className={"btn btn-" + color} onClick={onClick}>
       {children}
@@ -15,4 +13,4 @@ const Button = ({ children, onClick, color = "success" }: Props) => {
   );
 };
 
-export default Button;
+export default LogButton;

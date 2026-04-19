@@ -83,7 +83,9 @@ function App() {
       </div>
 
       <div className="text-center">
-        <Button onClick={() => setShowEvaluation(true)}>Evaluate</Button>
+        <Button onClick={() => setShowEvaluation(true)}>
+          Evaluate it here with Eva
+        </Button>
         <div className="mt-3">
           <Box />
         </div>
